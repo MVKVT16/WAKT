@@ -1,0 +1,11 @@
+.base-map {
+  top: 0 + $navBarHeight;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 0;
+}

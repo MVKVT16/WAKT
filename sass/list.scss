@@ -1,0 +1,55 @@
+@import "partials/base";
+$listItemHighlightColor: #EEE;
+.list-container {
+  padding: 5px;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    border: 1px solid $thin-border-color;
+    list-style: none;
+    padding: 0;
+    
+    p {
+      text-align: center;
+    }
+  }
+  li {
+    position: relative;
+    min-height: 70px;
+    border-bottom: 1px solid $thin-border-color;
+    padding: 5px 5px 5px 5px;
+    &:hover {
+      background-color: $listItemHighlightColor; 
+    }
+    .artwork-name {
+      font-size: 1.1em;
+    }
+    .artwork-artist,
+    .artwork-year{
+      display: block;
+      font-size: 0.9em;
+    }
+    .artwork-artist,
+    .artwork-year,
+    .artwork-name {
+        color: #000;
+    }
+    .base-tag {
+        position:absolute;
+        right:2px;
+        bottom:2px;
+    }
+  }
+}
+#list-end{
+    text-align: center;
+    color:#000;
+}
+
+.base-spinner-large{
+    left:50%;
+    margin-left:-6.5em;
+    position:fixed;
+    top:100px;
+}

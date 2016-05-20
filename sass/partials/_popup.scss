@@ -1,0 +1,34 @@
+#base-popup-container {
+  position: fixed;
+  top: 15%;
+  z-index: 99999;
+  text-align: center;
+  left: 16px;
+  right: 16px;
+  bottom: 15%;
+}
+
+#base-popup-background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.1);
+}
+
+#base-popup-popup {
+  font-size: 1em;
+  border: 1px solid $tertiary-colour;
+  padding: 16px 16px 0 16px;
+  background-color: #FFF;
+  display: inline-block;
+  
+  max-height: 100%;
+  overflow: auto;
+  
+  button:first-of-type {
+	  margin-right: 16px
+  }
+}

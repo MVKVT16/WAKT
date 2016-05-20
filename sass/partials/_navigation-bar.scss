@@ -1,0 +1,70 @@
+header {
+    position: fixed;
+    height: $navBarHeight;
+    width: 100%;
+    top:0px;
+    left:0px;
+    background-color: black;
+    color:white;
+    text-align:center;
+    font-size: 0.8em;
+    z-index: 9999;    
+
+    #base-menu-button {
+        position: fixed;
+        left:8px;
+        top:8px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+    
+    #base-language-select{
+        position:fixed;
+        right:8px;
+        top:4px;
+        width:48px;
+        height:48px;
+        padding-top: 9px;
+        padding-right: 2px;
+    }
+    #base-language-list{
+        display:none;
+        list-style: none;
+        position:fixed;
+        right:0px;
+        top:-13+$navBarHeight;
+        background-color:$side-menu-background-color;
+        width:50px;
+        padding:8px;
+        
+        li {
+          padding-top: 3px;
+        }
+    }
+
+    .base-language-select-flag {
+      width: 38x;
+      height:24px;
+    }
+    
+    a {
+        color: $light-text-color;
+        text-decoration: none;
+        width: 400px;
+        max-width: 50%;
+        margin: auto;
+        display: block;
+    }
+	
+    h1 {
+        margin-top:0.4em;
+    }
+	
+    .header-title-logo {
+        height: 36px;
+        vertical-align: middle;
+        margin: 0;
+        position: relative;
+        top: -2px;
+    }
+}

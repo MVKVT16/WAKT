@@ -1,0 +1,33 @@
+@import "partials/base";
+
+#base-content-box {
+  padding-top: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size:1em;
+}
+
+.info-container {
+  border-top:3px solid $secondary-colour;
+  
+}
+
+#cookie-function-list {
+    margin-top:-5px;
+    list-style:square;
+    
+    li {
+        margin:10px 0;
+    }
+}
+
+.fa-angle-double-down {
+    margin-top:-40px;
+    float:right;
+}
+
+.faq {
+    h3 {
+        margin-right:20px;
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "base": {
+        "notitle": "Unknown title",
+        "nocoords": "Missing coordinates",
+        "coords": "Has coordinates",
+        "wrongcoords": "Faulty coordinates",
+        "ok": "Ok",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "loggedout": "You are now logged out",
+        "cookieMessageTitle": "Cookies",
+        "cookieMessage": "This page uses cookies to improve the user experience",
+        "readMore": "Read more",
+        "nothingNearbyTitle":"No artworks found",
+        "nothingNearby":"Sorry, but we were unable to locate any artworks near your position",
+        "locationErrorMessageTitle": "Your position cannot be determined",
+        "locationErrorMessage": "Please check that you allow your browser to access your position. For more information, please see our ",
+        "locationErrorMessageLink": "FAQ",
+        "login": "Log in",
+        "logout": "Log out",
+        "urierrormessagetitle": "Invalid URL",
+        "urierrormessage": "The URL is faulty, possibly due to faulty parameters"
+    },
+    "map": {
+        "contributors": "contributors",
+        "moreinfo": "More info"
+    },
+    "index": {
+        "search": "Search",
+        "map": "Map",
+        "nearby": "Find nearby artworks",
+        "offentligkonst": "OffentligKonst.se",
+        "about": "About WAKT",
+        "login": "Log in",
+        "logout": "Log out"
+    },
+    "search": {
+        "search": "Search",
+        "searchtitle": "WAKT Search",
+        "searchfieldTitle": "Artwork name",
+        "searchfieldArtist": "Artist",
+        "all": "All",
+        "county": "All counties",
+        "muni": "Choose a county first",
+        "hasImage": "Must have image",
+        "allMunies": "All municipalities",
+        "coordsField":"Coordinates",
+        "countyField":"County",
+        "muniField":"Municipalities"
+    },
+    "search-map": {
+        "s-maptitle": "WAKT Map"
+    },
+    "list": {
+        "results": "Results",
+        "loading": "Loading...",
+        "endmatches": "No more matches",
+        "nomatches": "No matches"
+    },
+    "edit-position": {
+        "editpos": "Edit position",
+        "markerposition": "Use the marker's position",
+        "confch": "Confirm your change",
+        "process": "Your suggestion is processing",
+        "thank": "Thank you for your contribution",
+        "notlogedin": "You are not logged in",
+        "login": "Log in",
+        "notlogeddesc": "Your change will be added as a suggestion. Log in to make make changes directly."
+    },
+    "artwork": {
+        "artinfo": "Artwork information",
+        "addcoords": "Add coordinates",
+        "readmore": "Read more at Wikipedia",
+        "changecoords": "Change coordinates",
+        "history": "Event history",
+        "historyloading": "Loading history...",
+        "historyempty": "No history available.",
+        "historymarkedincorrect": "Reported as faulty",
+        "historymarkedcorrect": "Report removed",
+        "historymarkedadded": "Coordinates added",
+        "historymarkedchanged": "Coordinates changed",
+        "noartwork": "No artwork found",
+        "possibleerror": "The error may be caused by faulty parameters in the URL",
+        "reportwrong": "Report faulty position",
+        "removereport": "Mark as correct",
+        "removereportinfomessagetitle": "Position fault report",
+        "removereportinfomessage": "This action will mark the coordiantes of this artwork as correct for all WAKT users. The coordinates will not be modified.",
+        "reportinfomessagetitle": "Position fault report",
+        "reportinfomessage": "This action will mark the coordiantes of this artwork as incorrect for all WAKT users. The coordinates will not be modified."
+    },
+    "aboutW": {
+        "aboutWtitle": "About WAKT",
+        "aboutProj": "Welcome to WAKT!",
+        "faq": "FAQ",
+        "Q1": {
+            "Q": "How does \"Find nearby artworks\" works if the artwork does not have coordiantes?",
+            "A": "In order for \"Find nearby artworks\" to work, the user must have at least one artwork nearby that has coordinates. Then all artworks that are in the same list on Wikipedia are shown. The artworks are sorted into lists by municipality and region."
+        },
+        "Q2": {
+            "Q": "Why should I log in?",
+            "A": "You can log in with you Wikipedia account with oAuth to write changes directly to Wikipedia. Your changes will then be added directly to the artwork in the list, with your Wikipedia account as author. If you choose not to log in you can edit coordinates anonymously and your changes will be added as suggestions to Wikipedias discussion page for the relevant list."
+        },
+        "Q3": {
+            "Q": "How do I allow the browser to use location services?",
+            "A": "On iPhone, go to Settings -> Privacy -> Location Services -> Safari. Change to \"While using\". On Android you first have to make sure that you do not use Chrome. Then, go to Settings -> Loacation. Change to \"On\"."
+        },
+        "Q4": {
+            "Q": "Why does not \"Find nearby artworks\" and \"Map\" work when I use Chrome?",
+            "A": "Chrome does not allow location services for Web pages using HTTP but only for Web pages that use HTTPS, which WAKT currently does not support."
+        },
+        "Q5": {
+            "Q": "Is my position stored?",
+            "A": "Your position is only used to find nearby artworks and locate you on the map, and not saved anywhere. However if you select your position as the position of an artwork it will of course be saved in ÖDOK and our database of changes."
+        },
+        "Q6": {
+            "Q": "How does the process work when I suggest coordinates or changes?",
+            "A": "The changed from WAKT are published on Wikipedia , either as suggestions on the discussion page or directly in the list. Every 24 hours ÖDOK, Öppen Databas för Offentlig Konst, reads these lists and saves the result in their open database. ÖDOK’s API is then publicly available and used by for example WAKT to show the positions of artworks."
+        },
+        "Q7": {
+            "Q": "Why can't I see my changes?",
+            "A": "Your changes are saved directly on Wikipedia if you are logged in (or as a suggestion otherwise). The database are updated every night and it may therefore take up to 24 hours before your changes us available in WAKT."
+        },
+        "contact": "Contact",
+        "abouttextBeforeLink": "WAKT, WebbApplikation för KonstTaggning (Web Application for Artwork Tagging) is a tool for adding coordinates to artworks in Wikimedia Sveriges database. To view the artworks in the database, or to read more about the project please visit ",
+        "abouttextAfterLink": "Unfortunately some artworks are missing exact coordinates and can therefore not be shown on the map. This is the problem WAKT aims to solve by letting users add and modify the coordinates of artworks in the database.",
+        "abouttextNextPart": "WAKT was originally a school project by KTH-students led by Wikimedia Sverige. If you as a developer would like to help improve WAKT please visit our ",
+        "weUseCookie": "We use cookies to:",
+        "cookieUse1": "Keep track of which language you choose to use in our application",
+        "cookieInfo": "All our cookies are first party and only used for specific functionalities in our application as stated above, and are to help enhance your experience.",
+        "noLikeCookie": "If you do not agree with our use of cookies, simply delete them using your web-browser."
+    },
+    "error": {
+        "https": {
+            "title": "HTTPS not supported",
+            "message": "Using https on this page does not work in all browsers, due to downstream http dependencies",
+            "redirect": "Reload with http"
+        },
+        "api": {
+          "title": "Server did not respond",
+          "message": "You may be disconnected or an error occured on our server. Please try again later",
+          "confirm": "Ok"
+        }
+    },
+        "404Text": "404 Page not found"
+}

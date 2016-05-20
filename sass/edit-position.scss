@@ -1,0 +1,9 @@
+@import "partials/base";
+$headerHeight: 10;
+$font-stack: Helvetica;
+body {
+  font: 100% $font-stack;
+  margin: 0;
+}
+
+.base-button {height: 3.5em;}

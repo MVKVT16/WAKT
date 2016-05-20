@@ -1,0 +1,262 @@
+// Import basic CSS information
+@import '../modules/all';
+
+/*
+ * RESPONSIVE DESIGN
+ */
+
+//This is the breakpoints between different designs
+$widthToggleTiny: 400px;
+$widthTogglePhone: 700px;
+$widthToggleWideScreen: 900px;
+$widthToggleSuperWideScreen: 1250px;
+
+//General changes
+
+//Change font sizes
+#base-content-box, .base-button-map-box, .base-side-menu {
+	font-size: 1.1em;
+
+	@media (min-device-width:$widthToggleWideScreen){
+		font-size:1.3em;
+	}
+}
+
+//Change page (content) size
+#base-content-box {
+	margin: 32px;
+
+	//outline: 1px solid red;
+
+	@media (max-device-width:$widthToggleTiny){
+		margin: 16px;
+	}
+
+	@media (min-device-width:$widthTogglePhone) and (max-device-width:$widthToggleWideScreen){
+		max-width: 650px;
+		margin: auto;
+	}
+
+	@media (min-device-width:$widthToggleWideScreen){
+		max-width: 900px;
+		margin: auto;
+	}
+}
+
+//Popup changes
+#base-popup-popup {
+  @media (min-device-width:$widthToggleTiny){
+    width: 340px;
+  }
+}
+
+.base-thin-top-line {
+    border-top: 1px solid $thin-border-color;
+}
+
+//Set button max width at greatern widths, to prevent wierdly wide "full width buttons"
+.base-button {
+	@media (min-device-width:$widthToggleWideScreen){
+		max-width: 350px;
+	}
+}
+
+//Side menu stuff
+
+//Display side menu on wide screens
+.base-side-menu {
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		display: block !important;
+	}
+
+	.base-side-menu-close-area {
+		@media (min-device-width:$widthToggleSuperWideScreen){
+			display: none;
+		}
+	}
+}
+
+//Offset page content for side menu
+body{
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		padding-left: 300px;
+	}
+}
+
+//Offset maps for side menu
+.base-map {
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		margin-left: 300px;
+	}
+}
+
+//Offset map buttons for side menu
+nav.base-button-map-box {
+	@media (min-device-width:$widthToggleWideScreen){
+		width: 350px;
+	}
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		left: 300px;
+	}
+}
+
+.artwork div.image-container {
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		position: absolute;
+		left: 682px;
+	}
+}
+
+//Hide menu icon on wide screens
+header #base-menu-button {
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		display: none;
+	}
+}
+
+// Page specific changes
+
+//No menu-offset since there are no side menu on index
+body.index{
+	@media (min-device-width:$widthToggleSuperWideScreen){
+		padding-left: 0px;
+	}
+}
+
+.index {
+	//Set page to 700px wide, 350px for buttons and 350px for image;
+	 #base-content-box,  {
+		@media (min-device-width:$widthToggleWideScreen){
+			width: 700px;
+			margin: auto;
+		}
+	}
+
+	.button-group {
+		@media (min-device-width:$widthToggleWideScreen){
+			max-width: 400px;
+		}
+	}
+
+	//Show image
+	.main-menu-image{
+		display: none;
+		@media (min-device-width:$widthToggleWideScreen){
+			float: right;
+			max-width: 350px;
+			max-height: 530px;
+			display: block;
+		}
+	}
+
+	// Adjust icon sizes
+	.icon-wrapper {
+		@media (max-width:$widthToggleWideScreen){
+			font-size: 1.2em;
+			margin: 5px
+		}
+	}
+}
+
+.artwork  {
+	//Set content to 350px
+	#base-content-box,  {
+		@media (min-device-width:$widthToggleWideScreen){
+			width: 350px;
+			margin: 16px;
+		}
+	}
+
+	// Put buttons at the bottom of page
+	.button-group {
+		@media (min-device-width:$widthToggleWideScreen){
+			width: 350px;
+		}
+	}
+
+	//Set image to "rest of page"
+	.image-container {
+		@media (min-device-width:$widthToggleWideScreen){
+			position: absolute;
+			top: 70px;
+			bottom: 20px;
+			right: 20px;
+			left: 382px;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+		}
+
+		a, img {
+			@media (max-device-width:$widthToggleTiny){
+				max-width: 100%;
+				max-height: 350px;
+			}
+			@media (min-device-width:$widthToggleTiny) and (max-device-width:999px){
+				max-width: 100%;
+				max-height: 450px;
+			}
+			@media (min-device-width:$widthToggleWideScreen){
+                                width:auto;
+                                height:auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+	}
+
+	//Left-align information text
+	.information-container {
+		@media (min-device-width:$widthToggleWideScreen){
+			text-align: left;
+			padding-top: 2em;
+		}
+	}
+}
+
+.edit-position {
+	//Make "Half buttons" "full buttons" for wide screens
+	  .base-left-button-wrapper, .base-right-button-wrapper{
+		@media (min-device-width:$widthToggleWideScreen){
+			width: 100%;
+			float: none;
+			padding: 0px;
+		}
+	}
+
+	//Set popup width to 720px (350px per button + margins)
+	.edit-position #popup {
+		@media (min-device-width:$widthToggleWideScreen){
+			width: 720px;
+		}
+	}
+}
+
+.about {
+  //Show image
+	.side-image{
+		display: none;
+		@media (min-device-width:$widthTogglePhone){
+			float: right;
+			max-width: 350px;
+			max-height: 530px;
+			display: block;
+                        background-color: #fff;
+                        padding:5px;
+		}
+	}
+}
+
+/*
+ * IMPORTS
+ */
+@import 'typography';
+@import 'navigation-bar';
+@import 'side-menu';
+@import 'map';
+@import 'button';
+@import 'content-box';
+@import 'spinner';
+@import 'tag';
+@import 'popup';

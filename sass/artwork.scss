@@ -1,0 +1,88 @@
+@import "partials/base";
+$headerColor: #000;
+$buttonColor: #DDD;
+$borderColor: #000;
+$textColor: #000;
+$imageH: 130px;
+$imageW: 250px;
+
+.image-container {
+  margin-top: $navBarHeight+5px;
+  display: block;
+  img {
+    margin: auto;
+    display: block;
+  }
+  display: none;
+}
+
+.information-container {
+  padding-top: 1em;
+  color: $textColor;
+  text-align: center;
+  // This scss needs fixing
+  #artwork-artwork-name {
+    font: 30px sans-serif;
+    display: block;
+  }
+  #artwork-artist-name {
+    font: italic 20px sans-serif;
+    display: block;
+  }
+  // End fixing
+  
+  h2 {
+	margin-top: 1.2em;
+  }
+}
+
+.base-spinner{
+    margin-top:80px;
+}
+
+
+.base-tag, .coordinates{
+    margin-top:5px;
+}
+
+.coordinates {
+	float: right;
+	font-size: 0.7em;
+}
+
+.history-tag {
+    display: block;
+    margin-right: 0px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 8px;  
+    border: 1px solid $thin-border-color;   
+}
+.history-tag:last-of-type {
+    margin-bottom: 64px;
+}
+
+.time {
+  font-size: 1.1em;
+}
+
+.event {
+  display: block;
+  font-size: 0.9em;
+}
+
+#history-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom:10px;
+}
+
+#ok-button {
+    bottom: 32px;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}

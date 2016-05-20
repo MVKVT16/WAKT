@@ -1,0 +1,59 @@
+@import "partials/base";
+@import 'modules/all';
+
+$box-vertical-margin: 1em;
+
+#search-form {
+	padding-top: 0.5em;
+}
+
+.select-box {
+    display: block;
+	
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: $box-vertical-margin;
+    margin-bottom: $box-vertical-margin;
+	
+    width: 100%;
+    height: 2em;
+    padding: 0 5px;
+    box-sizing: border-box;
+
+    font-size: 1em;
+    border: 1px solid $thin-border-color;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.checkbox-container {
+    margin-top: $box-vertical-margin;
+    margin-bottom: $box-vertical-margin;
+   
+    height: 44px;
+    vertical-align: middle;
+    text-indent: 10px;
+    input {
+        width: 44px;
+        height: 44px;
+        
+        
+        float: left;
+    }
+    label {
+        display: inline-block;
+        margin-top: 13px;
+    }
+}
+
+label .select-box {
+    margin-top: 5px;
+}
+
+.hide-extra-options{
+	display: none;
+}
+
+.show-extra-options{
+	display: inline;
+}

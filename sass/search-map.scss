@@ -1,0 +1,32 @@
+@import "partials/base";
+
+.base-spinner-large{
+    margin-top:150px;
+}
+
+.popup{
+    a{
+        text-decoration: none;
+    }
+    
+    color:#000;
+    span{
+        display: block;
+    }
+    #title{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    button {
+        margin-bottom: 0;
+        margin-top: 0.5em;
+    }
+    
+    .base-tag {
+        position: relative;
+        margin: 5px 0;
+        font-size: 0.9em;
+    }
+}
+

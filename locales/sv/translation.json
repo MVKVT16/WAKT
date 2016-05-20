@@ -1,0 +1,147 @@
+{
+    "base": {
+        "notitle": "Okänd titel",
+        "nocoords": "Saknar koordinater",
+        "coords": "Har koordinater",
+        "wrongcoords": "Felaktiga koordinater",
+        "ok": "Ok",
+        "confirm": "Bekräfta",
+        "cancel": "Avbryt",
+        "loggedout":"Du är nu utloggad",
+        "cookieMessageTitle": "Cookies",
+        "cookieMessage": "Denna sida använder Cookies för att förbättra användarupplevelsen",
+        "readMore": "Läs mer",
+        "nothingNearbyTitle":"Inga konstverk hittade",
+        "nothingNearby":"Vi kan tyvärr inte hitta några konstverk nära din position",
+        "locationErrorMessageTitle": "Din position kan ej fastställas",
+        "locationErrorMessage": "Kontrollera att du tillåter webbläsaren att använda din position. För mer info se vår ",
+        "locationErrorMessageLink": "FAQ",
+        "login": "Logga in",
+        "logout": "Logga ut",
+        "urierrormessagetitle": "Felaktig URL",
+        "urierrormessage": "URL:en är felaktig, troligtvis på grund av felaktiga parametrar"
+    },
+    "map": {
+        "contributors": "bidragsgivare",
+        "moreinfo": "Läs mer"
+    },
+    "index": {
+        "search": "Sök",
+        "map": "Karta",
+        "nearby": "Hitta närliggande konstverk",
+        "offentligkonst": "OffentligKonst.se",
+        "about": "Om WAKT",
+        "login": "Logga in",
+        "logout": "Logga ut"
+    },
+    "search": {
+        "search": "Sök",
+        "searchtitle": "WAKT Sök",
+        "searchfieldTitle": "Konstverknamn",
+        "searchfieldArtist": "Konstnär",
+        "all": "Alla",
+        "county": "Alla län",
+        "muni": "Välj ett län först",
+        "hasImage": "Måste ha bild",
+        "allMunies": "Alla kommuner",
+        "coordsField":"Koordinater",
+        "countyField":"Län",
+        "muniField":"Kommun"
+    },
+    "search-map": {
+        "s-maptitle": "WAKT Karta"
+    },
+    "list": {
+        "results": "Resultat",
+        "loading": "Laddar...",
+        "endmatches": "Inga fler träffar",
+        "nomatches": "Inga träffar"
+    },
+    "edit-position": {
+        "editpos": "Ändra position",
+        "markerposition": "Använd nålens position",
+        "confch": "Bekräfta din ändring",
+        "process": "Ditt förslag bearbetas",
+        "thank": "Tack för din medverkan",
+        "notlogedin": "Du är inte inloggad",
+        "login": "Logga in",
+        "notlogeddesc": "Din ändring kommer registreras som ett förslag. Logga in för att utföra ändringar direkt."
+    },
+    "artwork": {
+        "artinfo": "Information om konstverket",
+        "addcoords": "Lägg till koordinater",
+        "readmore": "Läs mer på Wikipedia",
+        "changecoords": "Ändra koordinater",
+        "history": "Ändringshistorik",
+        "historyloading": "Laddar historik...",
+        "historyempty": "Ingen historik tillgänglig.",
+        "historymarkedincorrect": "Felanmäld",
+        "historymarkedcorrect": "Borttagen felanmälan",
+        "historymarkedadded": "Koordinater tillagd",
+        "historymarkedchanged": "Koordinater ändrat",
+        "noartwork": "Inget konstverk hittat",
+        "possibleerror": "Felet kan bero på felaktiga parametrar i URL:en",
+        "reportwrong": "Rapportera felaktig position",
+        "removereport": "Markera att info är korrekt",
+        "removereportinfomessagetitle": "Felanmälan av position",
+        "removereportinfomessage": "Du håller på att markera detta konstverks koordinater som korrekta för samtliga WAKT-användare. Konstverkets position kommer inte modifieras",
+        "reportinfomessagetitle": "Felanmälan av position",
+        "reportinfomessage": "Du håller på att markera detta konstverks koordinater som felaktiga för samtliga WAKT-användare. Konstverkets position kommer inte modifieras"
+    },
+    "aboutW": {
+        "aboutWtitle": "Om WAKT",
+        "aboutProj": "Välkommen till WAKT!",
+        "weUseCookie": "Vi använder cookies för att:",
+        "cookieUse1": "Veta vilket språk du har valt att använda i vår applikation",
+        "cookieInfo": "Alla våra cookies är från första part and används bara för specifika funktioner i vår applikation som det står ovan, och är bara till för att förbättra din använding av vår applikation.",
+        "noLikeCookie": "Om du inte samtycker till vår använding av cookies, radera dem helt enkelt genom din webbläsare.",
+        
+        "faq": "FAQ",
+        "Q1": {
+            "Q": "Hur kan \"Hitta närliggande konstverk\" fungera om konstverken inte har koordinater?",
+            "A": "För att \"Hitta närliggande konstverk\" ska fungera så måste det finnas minst ett konstverk i närheten som har koordinater. Då visas samtliga konstverk som ligger i samma lista som detta konstverk på Wikipedia. Listorna delas in efter kommun och område."
+        },
+        "Q2": {
+            "Q": "Varför ska jag logga in?",
+            "A": "Du kan logga in med oAuth för att skriva ändringarna direkt på Wikipedia. Är du inloggad skrivs dina koordinatändringar direkt för konstverket i listan, med ditt Wikipediakonto som skribent. Detta gör att ändringarna snabbare kommer in i databasen. Om du inte vill koppla ditt konto kan du redigera koordinater anonymt, och då sparas dina ändringar som förslag på Wikipedias diskussionssida för den relevanta sidan."
+        },
+        "Q3": {
+            "Q": "Hur tillåter jag att webläsaren använder platstjänster?",
+            "A": "På iPhone går du in på Inställningar -> Integritetsskydd -> Platstjänster -> Safari. Ändra till \"När appen används\". På Android måste du först se till att du inte använder Chrome som webläsare. Gå sedan in på Inställnignar -> Plats. Ändra till \"På\"."
+        },
+        "Q4": {
+            "Q": "Varför fungerar inte \"Hitta närliggande konstverk\" och \"Karta\" då jag använder Chrome?",
+            "A": "Chrome tillåter inte platstjänster för webbsidor som använder HTTP utan bara för de webbsidor som använder HTTPS, vilket WAKT för tillfället inte stödjer."
+        },
+        "Q5": {
+            "Q": "Sparar ni min position?",
+            "A": "Din position används endast för att hitta närliggande konstverk samt att centrera kartan på din position. Om du väljer att placera ett konstverk på din position sparas den dock som konstverkets position i både ÖDOK och i vår databas över ändringar."
+        },
+        "Q6": {
+            "Q": "Hur går processen till då jag föreslår koordinater eller ändringar?",
+            "A": "Ändringarna från WAKT publiceras på Wikipedia, antingen som förslag på diskussionssida eller direkt i konstverkslistorna. Varje dygn läser ÖDOK, Öppen Databas för Offentlig Konst, in dessa listor och sparar resultatet i deras databas. ÖDOKs API är öppet tillgängligt och används sedan av bland annat WAKT för att visa konstverk."
+        },
+        "Q7": {
+            "Q": "Varför ser jag inte min ändring direkt?",
+            "A": "Dina ändringar sparas direkt på Wikipedia om du är inloggad (och läggs annars till som förslag). Databasen läser in listorna från Wikipedia varje dygn och det kan därför ta upp till ett dygn innan dina ändringar syns i WAKT."
+        },
+        "contact": "Kontakt",
+        "abouttextBeforeLink": "WAKT, WebbApplikation för KonstTaggning, är ett verktyg för att tagga konstverk i Wikimedia Sveriges databas över offentlig konst med koordinater. För att se konstverken i databasen eller läsa mer om projektet kan du besöka ",
+        "abouttextAfterLink": ". Tyvärr saknar många konstverk i databasen i nuläget exakta koordinater och kan därför inte visas på kartan. Det är detta problem som WAKT försöker lösa genom att låta dig som användare registrera och ändra koordinater på konstverken i databasen.",
+        "abouttextNextPart": "WAKT var ursprungligen ett skolprojekt av KTH-studenter under ledning av Wikimedia Sverige. Om du som volontär eller utvecklare vill hjälpa till och förbättra WAKT kan du besöka vår ",
+        "readmore": "Läs mer om WAKT på vår "
+    },
+    "error": {
+        "https": {
+            "title": "HTTPS stöds inte",
+            "message": "Användandet av https för hemsidan fungerar inte i alla browsers på grund av att sidan är beroende av sidor som inte stödjer protokollet",
+            "redirect": "Ladda om sidan med http"
+        },
+        "api": {
+          "title": "Servern svarade inte",
+          "message": "Du kan ha förlorat uppkopplingen eller något fel har inträffat på servern. Vänligen försök igen senare",
+          "confirm": "Ok"
+        },
+        "404Text": "404 Sidan hittades inte"
+    }
+}

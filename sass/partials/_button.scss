@@ -1,0 +1,88 @@
+
+
+.base-button {
+  display: inline-block;
+  position:relative;
+  min-height:2em;
+  background-color: $tertiary-colour;
+  text-decoration: none;
+  font-size:1em;
+  border: none;
+  outline: none;
+  color: white;
+  cursor:pointer;
+  border-radius: 0;
+  -webkit-appearance: none;
+  
+  min-height: 3.5em;
+
+
+  @media screen and (min-device-width:600px){
+      //font-size:1.4em;
+  }
+
+  margin-bottom:1em;
+  
+  &:active {
+      background-color: $tertiary-active-color;
+  }
+
+  &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+  }
+  
+  &:hover {
+      background-color: $tertiary-active-color;
+  }
+}
+
+.base-button-highlight {
+  background-color: $secondary-colour;
+  
+  &:active {
+      background-color: $secondary-active-color;
+  }
+  &:hover {
+      background-color: $secondary-active-color;
+  }
+}
+
+ .base-full-button {
+    /*@media screen and (min-device-aspect-ratio:1/1) {//}and (max-device-height:600px) {// In case of small screen
+        font-size:6vh;
+    }*/
+    width:100%;
+    padding: 0.5em;
+ }
+ 
+.base-half-button {
+    width:100%;
+    padding: 0.5em;
+    font-size: 0.9em;
+ }
+
+ .base-button-map-box {
+    position: fixed;
+
+    padding: 0 16px;
+    right:0;
+    left:0;
+    bottom: 1px;
+    z-index: 1;
+ }
+ 
+ .base-left-button-wrapper {
+    width: 50%;
+    float: left;
+    padding-right: 8px;
+    box-sizing: border-box;
+ }
+  .base-right-button-wrapper {
+    width: 50%;
+    float: right;
+    padding-left: 8px;
+    box-sizing: border-box;
+ }
+ 
+ .base-button p {margin: 0; padding: 0}
