@@ -14,7 +14,7 @@ var artworkHistory = {
     }, function(response) {
       callback(response);
     }).fail(function(xhr, status, message) {
-      showErrorMessage('An error('+status+'): '+message.error);
+      gui.showErrorMessage('An error('+status+'): '+message.error);
     });
   },
   addEvent: function(artwork, eventType, callback) {
@@ -27,8 +27,8 @@ var artworkHistory = {
     }).done(function() {
       callback();
     }).fail(function(xhr, status, message) {
-      showErrorMessage('An error('+status+'): '+message.error);
-    })
+      gui.showErrorMessage('An error('+status+'): '+message.error);
+    });
   },
   setReported: function(artwork, callback) {
     this.addEvent(artwork, EventType.reported, callback);

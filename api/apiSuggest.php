@@ -4,6 +4,24 @@ if (strtolower($_SERVER['REQUEST_METHOD']) != 'post') {
   // Returning "405: Method Not Allowed" if another method is provided
   exit(405);
 }
+
+// Check that all parameters needed exist.
+if(!isset($_POST['id'])) {
+  exitWithHttpStatus(400, 'Missing id parameter');
+}
+if(!isset($_POST['title'])) {
+  exitWithHttpStatus(400, 'Missing title parameter');
+}
+if(!isset($_POST['list'])) {
+  exitWithHttpStatus(400, 'Missing list parameter');
+}
+if(!isset($_POST['latitude'])) {
+  exitWithHttpStatus(400, 'Missing latitude parameter');
+}
+if(!isset($_POST['longitude'])) {
+  exitWithHttpStatus(400, 'Missing longitude parameter');
+}
+
 // Retrieving values of the POST request
 $list = $_POST['list'];
 $title = $_POST['title'];

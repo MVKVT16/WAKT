@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
+include_once('helperFunctions.php');
 switch (strtolower($_REQUEST['action'])) {
 	case 'get':
 		include_once('apiGet.php');

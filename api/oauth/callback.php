@@ -17,4 +17,9 @@ $accessToken = $client->complete($requestToken, $verifyCode);
 var_dump($accessToken);
 unset($_SESSION['access_token']);
 $_SESSION['access_token'] = $accessToken;
-header('Location: ' . $_SESSION['login_page']);
+
+if(isset($_SESSION['login_page'])) {
+  header('Location: ' . $_SESSION['login_page']);
+} else {
+  header('Location: ' . '/index.html');
+}

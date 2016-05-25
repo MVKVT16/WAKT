@@ -217,19 +217,21 @@ var oauth = {
       }
       // We need to send which page the user logged in from.
       var curPath = window.location.href;
-      window.location.href = "api/apiOAuth.php?oauth_action=login&login_page=" + encodeURIComponent(curPath);
+      window.location.href = "api/api.php?action=oauth&oauth_action=login&login_page=" + encodeURIComponent(curPath);
   },
   getUserInfo: function(callback) {
-    $.getJSON('api/apiOAuth.php', {
-        oauth_action: 'user_info'
-      }, function(response) {
+    $.getJSON('api/api.php', {
+      action: 'oauth',
+      oauth_action: 'user_info'
+    }, function(response) {
         callback(response);
     }).fail(function(xhr, status, message) {
-      gui.showErrorMessage('An error('+status+'): '+message.error);
+      gui.showErrorMessage('An error('+status+'): ' + message);
     });
   },
   logout: function() {
-    $.get('api/apiOAuth.php', {
+    $.get('api/api.php', {
+      action: 'oauth',
       oauth_action: 'logout'
     }, function() {
       var confirm = $('<button/>', {
@@ -249,17 +251,22 @@ var oauth = {
       if(jQuery.isFunction(oauth.logoutListener)) {
         oauth.logoutListener();
       }
+    }).fail(function(xhr, status, message) {
+      gui.showErrorMessage('An error('+status+'): ' + message);
     });
   },
   post: function(id, title, list, latitude, longitude) {
-    $.post('api/apiOAuth.php', {
+    $.post('api/api.php', {
+      action: 'oauth',
       oauth_action: 'post',
       id: id,
       title: title,
       list: list,
       latitude: latitude,
       longitude: longitude
-    };
+    }).fail(function(xhr, status, message) {
+      gui.showErrorMessage('An error('+status+'): ' + message);
+    });
   },
   registerLogoutListener: function(listenerFunction) {
     oauth.logoutListener = listenerFunction;

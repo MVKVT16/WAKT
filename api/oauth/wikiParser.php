@@ -5,8 +5,8 @@
 // Artworks are stored in tables on Wikipedia, and the syntax used to
 // describe these tables is wikitext. Each table can store multiple artworks
 // and each one of these tables generally has it's own unique Wikipedia page.
-// For example, here is the table containing
-// artworks in Nynäshamns municipality (in Stockholm County):
+// For example, here is the table containing artworks in Nynäshamns
+//  municipality (in Stockholm County):
 // https://sv.wikipedia.org/wiki/Lista_över_offentlig_konst_i_Nynäshamns_kommun.
 //
 //
@@ -21,10 +21,14 @@
 // | titel          = An artwork
 // | ... (more attributes will follow)
 // }}
-// {{ Offentligkonstlista ... }}                                   (artwork nr 2)
+// {{ Offentligkonstlista ...                                    (artwork nr 2)
+// | ... (the same attributes as the first artwork but with different values)
+// }}
+
 // -- Artwork table config --
-// Here you should set the correct names of the following attributes. The names
-// are the names of the attributes in an artwork (refer to the example above).
+// Here you should set the correct names of the following attributes should be set.
+// The names are the names of the attributes in an artwork (refer to the example above).
+$idAttr = 'id';
 $latAttr = 'lat';
 $longAttr = 'lon';
 
@@ -37,8 +41,7 @@ function editArtworkCoordinates($wikitext, $artworkId, $lat, $long) {
     //echo $modifiedArtwork;
     return str_replace($artwork, $modifiedArtwork, $wikitext);
   } else {
-    // If the artwork was not found, then return the unmodified wikitext.
-    return $wikitext;
+    exitWithHttpStatus(631, 'Artwork parser error: could not find artwork with the given id in the list');
   }
 }
 
@@ -56,15 +59,15 @@ function editArtworkAttribute($artwork, $attribute, $value) {
     $newAttr = preg_replace('#=.*#', $newValue, $attrValPair, 1);
     return str_replace($attrValPair, $newAttr, $artwork);
   } else {
-    // If no match, then return the unmodified artwork.
-    return $artwork;
+    exitWithHttpStatus(631, 'Artwork parser error: could not find the attribute: ' . $attribute . ' in the artwork');
   }
 }
 
 function getArtworkById($wikitext, $id) {
+  global $idAttr;
   // First find out at which position the id attribute of the artwork starts.
   $matches = array();
-  preg_match('#id\s*=\s*' . $id . '#', $wikitext, $matches, PREG_OFFSET_CAPTURE);
+  preg_match('#' . $idAttr. '\s*=\s*' . $id . '#', $wikitext, $matches, PREG_OFFSET_CAPTURE);
 
   // Check if we had a match.
   if (count($matches) >= 1) {
@@ -74,7 +77,7 @@ function getArtworkById($wikitext, $id) {
     $beginPos = strrpos($wikitext, '{{Offentligkonstlista', -strlen($wikitext) + $pos);
     return substr($wikitext, $beginPos, ($endPos - $beginPos));
   } else {
-    return "";
+    exitWithHttpStatus(631, 'Artwork parser error: could not find artwork with id: ' . $id . ' in the raw wikitext');
   }
 }
 
@@ -104,18 +107,19 @@ function getArtworkAttribute($attribute, $artwork) {
     return trim($value[0]);
   } else {
     // If there was no such attribute in the artwork.
-    return '';
+    exitWithHttpStatus(631, 'Artwork parser error: could not find the attribute: ' . $attribute . ' in the artwork');
   }
 }
 
 function isArtworkInList($id, $artworkList) {
+  global $idAttr;
   // Searches for an artwork with an id matching the $id paramater
   // and returns it's index (if it was found).
   $counter = 0;
   // Iterate through artworks.
   foreach ($artworkList as $artwork) {
     // Get id of artwork.
-    $artworkId = getArtworkAttribute('id', $artwork);
+    $artworkId = getArtworkAttribute($idAttr, $artwork);
     if ($artworkId == $id) {
       // We found a match!
       // Return it's index.
@@ -124,7 +128,7 @@ function isArtworkInList($id, $artworkList) {
     $counter++;
   }
   // If no artwork with the specified id was found.
-  return -1;
+  exitWithHttpStatus(631, 'Artwork parser error: could not find artwork with id: ' . $id . ' in the list');
 }
 
 function artworkListToString($artworkList) {
