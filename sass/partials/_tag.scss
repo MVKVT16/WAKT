@@ -1,31 +1,20 @@
-
 .base-tag{
-    color: #fff;
-    font-size:0.7em;
-    font-weight: bold;
-    border-radius: 2px;
-    position:absolute;
-    padding:2px 4px;
+  color: #fff;
+  font-size:0.7em;
+  font-weight: bold;
+  border-radius: 2px;
+  position:absolute;
+  padding:2px 4px;
 }
 
 .base-no-coord{
-    background-color:#e6a100; //#ffb300;//Yellow
-    //box-shadow: 1px 1px #996b00;
+  background-color:#e6a100;
 }
+
 .base-has-coord{
-    background-color:#2d862d; //#339966;//Green
-    //box-shadow: 1px 1px #206020;
+  background-color:#2d862d;
 }
+
 .base-wrong-coord{
-    background-color:#990000;//Red 
-    //box-shadow: 1px 1px #4d0000;
+  background-color:#990000;
 }
-
-
-
-
-
-
-
-
-

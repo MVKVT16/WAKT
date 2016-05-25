@@ -30,19 +30,19 @@ $imageW: 250px;
     display: block;
   }
   // End fixing
-  
+
   h2 {
-	margin-top: 1.2em;
+    margin-top: 1.2em;
   }
 }
 
 .base-spinner{
-    margin-top:80px;
+  margin-top:80px;
 }
 
 
 .base-tag, .coordinates{
-    margin-top:5px;
+  margin-top:5px;
 }
 
 .coordinates {
@@ -51,16 +51,17 @@ $imageW: 250px;
 }
 
 .history-tag {
-    display: block;
-    margin-right: 0px;
-    padding-top: 8px;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-bottom: 8px;  
-    border: 1px solid $thin-border-color;   
+  display: block;
+  margin-right: 0px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 8px;
+  border: 1px solid $thin-border-color;
 }
+
 .history-tag:last-of-type {
-    margin-bottom: 64px;
+  margin-bottom: 64px;
 }
 
 .time {
@@ -76,13 +77,4 @@ $imageW: 250px;
   text-align: center;
   font-size: 1.5em;
   margin-bottom:10px;
-}
-
-#ok-button {
-    bottom: 32px;
-    vertical-align: middle;
-    text-align: center;
-    box-sizing: border-box;
-    transform: translate(-50%, -50%);
-    position: fixed;
 }

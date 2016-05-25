@@ -9,7 +9,7 @@ $listItemHighlightColor: #EEE;
     border: 1px solid $thin-border-color;
     list-style: none;
     padding: 0;
-    
+
     p {
       text-align: center;
     }
@@ -20,7 +20,7 @@ $listItemHighlightColor: #EEE;
     border-bottom: 1px solid $thin-border-color;
     padding: 5px 5px 5px 5px;
     &:hover {
-      background-color: $listItemHighlightColor; 
+      background-color: $listItemHighlightColor;
     }
     .artwork-name {
       font-size: 1.1em;
@@ -33,23 +33,24 @@ $listItemHighlightColor: #EEE;
     .artwork-artist,
     .artwork-year,
     .artwork-name {
-        color: #000;
+      color: #000;
     }
     .base-tag {
-        position:absolute;
-        right:2px;
-        bottom:2px;
+      position:absolute;
+      right:2px;
+      bottom:2px;
     }
   }
 }
+
 #list-end{
-    text-align: center;
-    color:#000;
+  text-align: center;
+  color:#000;
 }
 
 .base-spinner-large{
-    left:50%;
-    margin-left:-6.5em;
-    position:fixed;
-    top:100px;
+  left:50%;
+  margin-left:-6.5em;
+  position:fixed;
+  top:100px;
 }
