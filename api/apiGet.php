@@ -23,7 +23,7 @@ if(isset($parameters['format'])) {
 
 // Initializing required values to retrieve artworks from Offentligkonst.ses API
 $curlCounter = 0;
-$result == "";
+$result = "";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'http://offentligkonst.se/api/api.php?'.http_build_query($parameters));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -35,19 +35,19 @@ while($result == "" && $curlCounter < 5) {
 }
 curl_close($ch);
 // Checking if the API call encountered any error
-if($result === false) {
+/*if($result === false) {
   echo json_encode(array('error' => curl_error($ch)));
-  exit(500);
-}
+  exit(630);
+}*/
 // Decoding JSON response
 $response = json_decode(
   $result,
   true
 );
-if($response == NULL) {
+/*if($response == NULL) {
   echo json_encode(array('error' => "Received JSON response was wrong formated"));
-  exit(500);
-}
+  exit(630);
+}*/
 $head = $response['head'];
 if($head['status'] == '0') {
   echo json_encode(array('error' => $head['error_message']));
