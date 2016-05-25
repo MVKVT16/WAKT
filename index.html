@@ -3,76 +3,100 @@
 
 <head lang="sv">
 	<title>WAKT</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-	<link rel="apple-touch-icon" href="img/favicons/apple-icon-57x57.png" />
-	<link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png" />
-	<link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png" />
-	<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png" />
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png" />
-	<link rel="icon" sizes="144x144" href="img/favicons/android-icon-144x144.png" />
-	<link rel="icon" sizes="192x192" href="img/favicons/android-icon-192x192.png" />
+	<link rel="apple-touch-icon" href="img/favicons/apple-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png"/>
+	<link rel="icon" sizes="144x144" href="img/favicons/android-icon-144x144.png"/>
+	<link rel="icon" sizes="192x192" href="img/favicons/android-icon-192x192.png"/>
 
+	<!-- Third-party styles -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+	<!-- Page specific styles -->
 	<link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 </head>
 
 <body class="index">
-    <header>
-        <a href="index.html">
-            <h1>
-                <img class="header-title-logo" src="img/wakt-icon-white.svg"/>
-                WAKT
-            </h1>
-        </a>
-        <div id="base-language-select"></div>
-        <ul id="base-language-list"></ul>
-    </header>
-    <section id="base-content-box">
-        <img class="main-menu-image" src="img/wakt-icon.svg"/>
+	<header>
+		<a href="index.html">
+			<h1><img class="header-title-logo" src="img/wakt-icon-white.svg"/>WAKT</h1>
+    </a>
+    <div id="base-language-select"></div>
+    <ul id="base-language-list"></ul>
+  </header>
+  <section id="base-content-box">
+		<img class="main-menu-image" src="img/wakt-icon.svg"/>
+		<nav class="button-group">
+			<button id="nearby-search-button" class="base-button menu base-full-button base-button-highlight">
+				<div class="icon-wrapper">
+					<i class="fa fa-location-arrow"></i>
+				</div>
+				<div id=nearby-search-text></div>
+			</button>
+			<a href="search.html">
+				<button id="search-button" class="base-button menu base-full-button">
+					<div class="icon-wrapper">
+						<i class="fa fa-search"></i>
+					</div>
+					<div id=search-text></div>
+				</button>
+      </a>
+      <a href="search-map.html">
+        <button id="search-map-button" class="base-button menu base-full-button">
+          <div class="icon-wrapper">
+						<i class="fa fa-map"></i>
+					</div>
+					<div id=search-map-text></div>
+        </button>
+      </a>
+      <a href="#">
+        <button id="login-button" class="base-button menu base-full-button">
+          <div class="icon-wrapper">
+						<i class="fa fa-sign-in"></i>
+					</div>
+					<div id=login-text></div>
+				</button>
+			</a>
+			<a href="about.html">
+				<button id="about-button" class="base-button menu base-full-button">
+					<div class="icon-wrapper">
+						<i class="fa fa-question"></i>
+					</div>
+					<div id=about-text></div>
+				</button>
+			</a>
+			<a href="http://offentligkonst.se" target="_blank">
+				<button id="offentlig-button" class="base-button menu base-full-button">
+					<div class="icon-wrapper">
+						<i class="fa fa-external-link"></i>
+					</div>
+					<div id=offentlig-text></div>
+        </button>
+      </a>
+    </nav>
+  </section>
 
-        <nav class="button-group">
-            <button id="nearby-search-button" class="base-button menu base-full-button base-button-highlight">
-                <div class="icon-wrapper"><i class="fa fa-location-arrow"></i></div> <div id=nearby-search-text></div>
-            </button>
+	<!-- Loading Javscript files after dom is loaded -->
+	<!-- Third-party libraries -->
+	<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 
-            <a href="search.html">
-                <button id="search-button" class="base-button menu base-full-button">
-                    <div class="icon-wrapper"><i class="fa fa-search"></i></div> <div id=search-text></div>
-                </button>
-            </a>
-            <a href="search-map.html">
-                <button id="search-map-button" class="base-button menu base-full-button">
-                    <div class="icon-wrapper"><i class="fa fa-map"></i></div> <div id=search-map-text></div>
-                </button>
-            </a>
-            <a href="#">
-                <button id="login-button" class="base-button menu base-full-button">
-                    <div class="icon-wrapper"><i class="fa fa-sign-in"></i></div> <div id=login-text></div>
-                </button>
-            </a>
-            <a href="about.html">
-                <button id="about-button" class="base-button menu base-full-button">
-                    <div class="icon-wrapper"><i class="fa fa-question"></i></div> <div id=about-text></div>
-                </button>
-            </a>
+	<script src="lib/i18next/i18nextXHRBackend.min.js"></script>
+	<script src="lib/i18next/i18next.min.js"></script>
 
-            <a href="http://offentligkonst.se" target="_blank">
-                <button id="offentlig-button" class="base-button menu base-full-button">
-                    <div class="icon-wrapper"><i class="fa fa-external-link"></i></div> <div id=offentlig-text></div>
-                </button>
-            </a>
-        </nav>
-    </section>
+	<!-- Application files -->
+	<script src="js/translation.js"></script>
+	<script src="js/language-select.js"></script>
+
+	<script src="js/base.js"></script>
+	<script src="js/https.js"></script>
+
+	<script src="js/index.js"></script>
+
+	<script src="js/side-menu.js"></script>
 </body>
-<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="lib/i18next/i18nextXHRBackend.min.js"></script>
-<script src="lib/i18next/i18next.min.js"></script>
-<script src="js/translation.js"></script>
-<script src="js/language-select.js"></script>
-<script src="js/base.js"></script>
-<script src="js/index.js"></script>
-<script src="js/https.js"></script>
 </html>

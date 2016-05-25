@@ -3,135 +3,156 @@
 
 <head lang="sv">
 	<title></title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-	<link rel="apple-touch-icon" href="img/favicons/apple-icon-57x57.png" />
-	<link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png" />
-	<link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png" />
-	<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png" />
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png" />
-	<link rel="icon" sizes="144x144" href="img/favicons/android-icon-144x144.png" />
-	<link rel="icon" sizes="192x192" href="img/favicons/android-icon-192x192.png" />
+	<link rel="apple-touch-icon" href="img/favicons/apple-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png"/>
+	<link rel="icon" sizes="144x144" href="img/favicons/android-icon-144x144.png"/>
+	<link rel="icon" sizes="192x192" href="img/favicons/android-icon-192x192.png"/>
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Third-party styles -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+	<!-- Page specific styles -->
 	<link rel="stylesheet" href="css/about.css" />
 </head>
 
 <body class="about">
-    <header>
-        <a href="index.html">
-            <h1>
-                <img class="header-title-logo" src="img/wakt-icon-white.svg"/>
-                WAKT
-            </h1>
-        </a>
-        <div id="base-language-select"></div>
-        <ul id="base-language-list"></ul>
-        <span id="base-menu-button"><i class="fa fa-bars"></i></span>
-    </header>
+	<header>
+		<a href="index.html">
+			<h1><img class="header-title-logo" src="img/wakt-icon-white.svg"/>WAKT</h1>
+		</a>
+		<div id="base-language-select"></div>
+		<ul id="base-language-list"></ul>
+		<span id="base-menu-button"><i class="fa fa-bars"></i></span>
+	</header>
 
-    <aside class="base-side-menu">
-        <a href="list.html?nearby=true">
-            <div class="base-side-menu-icon-wrapper"><i class="fa fa-location-arrow"></i></div><div class="base-side-menu-label"></div>
-        </a>
+	<aside class="base-side-menu">
+		<a href="list.html?nearby=true">
+			<div class="base-side-menu-icon-wrapper">
+				<i class="fa fa-location-arrow"></i>
+			</div>
+			<div class="base-side-menu-label"></div>
+		</a>
+		<a href="search.html">
+			<div class="base-side-menu-icon-wrapper">
+				<i class="fa fa-search"></i>
+			</div>
+			<div class="base-side-menu-label"></div>
+		</a>
+		<a href="search-map.html">
+			<div class="base-side-menu-icon-wrapper">
+				<i class="fa fa-map"></i>
+			</div>
+			<div class="base-side-menu-label"></div>
+		</a>
+		<a href="#">
+			<div class="base-side-menu-icon-wrapper">
+				<i class="fa fa-sign-in"></i>
+			</div>
+			<div id="base-side-menu-login" class="base-side-menu-label"></div>
+		</a>
+		<a href="about.html">
+			<div class="base-side-menu-icon-wrapper">
+				<i class="fa fa-question"></i>
+			</div>
+			<div class="base-side-menu-label"></div>
+		</a>
+		<a href="http://offentligkonst.se" target="_blank">
+			<div class="base-side-menu-icon-wrapper">
+				<i class="fa fa-external-link"></i>
+			</div>
+			<div class="base-side-menu-label"></div>
+		</a>
+		<span class="notice">WAKT Beta v0.1&nbsp;&nbsp;|&nbsp;&nbsp;2016</span>
+		<div class="base-side-menu-close-area"></div>
+	</aside>
 
-        <a href="search.html">
-            <div class="base-side-menu-icon-wrapper"><i class="fa fa-search"></i></div><div class="base-side-menu-label"></div>
-        </a>
+	<section id="base-content-box">
+		<img class="side-image" src="img/wakt-icon.svg"/>
+		<h2 id="about-project"></h2>
+		<p id="about-text">
+			<a href="http://Offentligkonst.se">Offentligkonst.se</a>
+    </p>
+    <p id="about-readmore">
+      <a href="https://sv.wikipedia.org/wiki/Anv%C3%A4ndare:Waktmvk16">Wiki</a>&nbsp;&amp;&nbsp;<a href="https://github.com/MVKVT16/WAKT">Github</a>
+    </p>
 
-        <a href="search-map.html">
-            <div class="base-side-menu-icon-wrapper"><i class="fa fa-map"></i></div><div class="base-side-menu-label"></div>
-        </a>
+		<div class="info-container">
+			<h2 id="about-cookies">Cookies</h2>
+			<p id="we-use-cookie"></p>
+			<ul id="cookie-function-list">
+				<li id="cookie1"></li>
+			</ul>
+			<p id="cookie-information"></p>
+			<p id="how-remove-cookie"></p>
+    </div>
+		<div class="info-container">
+			<h2 id="about-faq"></h2>
+			<div class="base-thin-top-line faq" id="1">
+				<h3 id="question1"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer1"></p>
+			</div>
+			<div class="base-thin-top-line faq" id="2">
+				<h3 id="question2"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer2"></p>
+			</div>
+			<div class="base-thin-top-line faq" id="3">
+				<h3 id="question3"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer3"></p>
+			</div>
+			<div class="base-thin-top-line faq" id="4">
+				<h3 id="question4"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer4"></p>
+			</div>
+			<div class="base-thin-top-line faq" id="5">
+				<h3 id="question5"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer5"></p>
+			</div>
+			<div class="base-thin-top-line faq" id="6">
+				<h3 id="question6"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer6"></p>
+			</div>
+			<div class="base-thin-top-line faq" id="7">
+				<h3 id="question7"></h3>
+				<i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+				<p id="answer7"></p>
+			</div>
+		</div>
+		<div class="info-container">
+			<h2 id="about-contact"></h2>
+			<ul>
+				<li>Email: wakt.mvk16@gmail.com</li>
+      </ul>
+		</div>
+	</section>
 
-        <a href="#">
-            <div class="base-side-menu-icon-wrapper"><i class="fa fa-sign-in"></i></div><div id="base-side-menu-login" class="base-side-menu-label"></div>
-        </a>
+	<!-- Loading Javscript files after dom is loaded -->
+	<!-- Third-party libraries -->
+	<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 
-        <a href="about.html" class="active-menu-item">
-            <div class="base-side-menu-icon-wrapper"><i class="fa fa-question"></i></div><div class="base-side-menu-label"></div>
-        </a>
+	<script src="lib/i18next/i18nextXHRBackend.min.js"></script>
+	<script src="lib/i18next/i18next.min.js"></script>
 
+	<!-- Application files -->
+	<script src="js/translation.js"></script>
+	<script src="js/language-select.js"></script>
 
-        <a href="http://offentligkonst.se" target="_blank">
-            <div class="base-side-menu-icon-wrapper"><i class="fa fa-external-link"></i></div><div class="base-side-menu-label"></div>
-        </a>
+	<script src="js/base.js"></script>
 
-        <span class="notice">WAKT Beta v0.1&nbsp;&nbsp;|&nbsp;&nbsp;2016</span>
-    </aside>
+	<script src="js/about.js"></script>
 
-    <section id="base-content-box">
-        <img class="side-image" src="img/wakt-icon.svg"/>
-        <h2 id="about-project"></h2>
-        <p id="about-text">
-            <a href="http://Offentligkonst.se">Offentligkonst.se</a>
-        </p>
-      	<p id="about-readmore">
-      		<a href="https://sv.wikipedia.org/wiki/Anv%C3%A4ndare:Waktmvk16">Wiki</a>&nbsp;&amp;&nbsp;<a href="https://github.com/MVKVT16/WAKT">Github</a>
-      	</p>
-
-        <div class="info-container">
-            <h2 id="about-cookies">Cookies</h2>
-            <p id="we-use-cookie"></p>
-            <ul id="cookie-function-list">
-                <li id="cookie1"></li>
-            </ul>
-            <p id="cookie-information"></p>
-            <p id="how-remove-cookie"></p>
-        </div>
-
-        <div class="info-container">
-            <h2 id="about-faq"></h2>
-
-            <div class="base-thin-top-line faq" id="1">
-                <h3 id="question1"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer1"></p>
-            </div>
-
-            <div class="base-thin-top-line faq" id="2">
-                <h3 id="question2"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer2"></p>
-            </div>
-
-            <div class="base-thin-top-line faq" id="3">
-                <h3 id="question3"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer3"></p>
-            </div>
-
-            <div class="base-thin-top-line faq" id="4">
-                <h3 id="question4"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer4"></p>
-            </div>
-
-            <div class="base-thin-top-line faq" id="5">
-                <h3 id="question5"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer5"></p>
-            </div>
-            <div class="base-thin-top-line faq" id="6">
-                <h3 id="question6"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer6"></p>
-            </div>
-            <div class="base-thin-top-line faq" id="7">
-                <h3 id="question7"></h3><i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
-                <p id="answer7"></p>
-            </div>
-        </div>
-
-        <div class="info-container">
-            <h2 id="about-contact"></h2>
-            <ul>
-                <li>Email: wakt.mvk16@gmail.com</li>
-            </ul>
-        </div>
-    </section>
+	<script src="js/https.js"></script>
+	<script src="js/side-menu.js"></script>
 </body>
-<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="lib/i18next/i18nextXHRBackend.min.js"></script>
-<script src="lib/i18next/i18next.min.js"></script>
-<script src="js/translation.js"></script>
-<script src="js/language-select.js"></script>
-<script src="js/about.js"></script>
-<script src="js/base.js"></script>
-<script src="js/side-menu.js"></script>
-<script src="js/https.js"></script>
 </html>
