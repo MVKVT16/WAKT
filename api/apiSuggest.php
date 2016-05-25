@@ -22,7 +22,7 @@ $text .= (!($artist == NULL || $artist == "")? $artist : "''saknas''").", ";
 $text .= (!($year == NULL || $year == "")? $year : "''saknas''").", ";
 $text .= " (latitud: {$lat}, longitud: {$lng})";
 $textAppendix = ' (~~~~)';
-$introduction = "Detta stycke är skriven av en bot, se [[Användare:Kbohrnsen|Waktmvk16]] för mer information.{{break}}Kan vi få hjälp med att bekräfta förslagen och lägga in dessa i listan?{{break}}Nedan följer en lista med förslag på koordinatändringar.{{break}}''Varje förslag har formatet: titel, artist, år (föreslagna koordinater)''";
+$introduction = "Detta stycke är skriven av en bot, se [[Användare:Waktmvk16|Waktmvk16]] för mer information.{{break}}Kan vi få hjälp med att bekräfta förslagen och lägga in dessa i listan?{{break}}Nedan följer en lista med förslag på koordinatändringar.{{break}}''Varje förslag har formatet: titel, artist, år (föreslagna koordinater)''";
 
 // Setup curl
 $ch = curl_init();
