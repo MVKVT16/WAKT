@@ -95,7 +95,7 @@
         "cookieUse1": "Veta vilket språk du har valt att använda i vår applikation",
         "cookieInfo": "Alla våra cookies är från första part and används bara för specifika funktioner i vår applikation som det står ovan, och är bara till för att förbättra din använding av vår applikation.",
         "noLikeCookie": "Om du inte samtycker till vår använding av cookies, radera dem helt enkelt genom din webbläsare.",
-        
+
         "faq": "FAQ",
         "Q1": {
             "Q": "Hur kan \"Hitta närliggande konstverk\" fungera om konstverken inte har koordinater?",
@@ -140,8 +140,8 @@
         "api": {
           "title": "Servern svarade inte",
           "message": "Du kan ha förlorat uppkopplingen eller något fel har inträffat på servern. Vänligen försök igen senare",
-          "confirm": "Ok"
+          "confirm": "Ladda om"
         },
-        "404Text": "404 Sidan hittades inte"
+        "404Text": "404: Sidan hittades inte"
     }
 }
