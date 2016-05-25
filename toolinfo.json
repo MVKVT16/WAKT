@@ -1,0 +1,9 @@
+{
+  "name" : "WAKT",
+  "title" : "WAKT",
+  "description" : "WAKT, WebbApplikation för KonstTaggning (Web Application for Artwork Tagging) is a tool for adding coordinates to artworks in Wikimedia Sveriges database",
+  "url" : "http://tools.wmflabs.org/wakt",
+  "keywords" : "offentligkonst.se, artworks, coordinates",
+  "author" : "MVKVT16",
+  "repository" : "https://github.com/MVKVT16/WAKT"
+}
