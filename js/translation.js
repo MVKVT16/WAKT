@@ -17,7 +17,7 @@ var tFuncs = {
       lng = $('head').attr('lang');
     }
     i18next.use(i18nextXHRBackend).init({
-      "debug": true,
+      "debug": false,
       "lng": lng,
       "fallbackLng": defaultLang,
       "backend": {

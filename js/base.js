@@ -22,25 +22,25 @@ var gui = {
   },
   //Displays an error message if problems occur with i18next
   showErrorMessage: function(error) {
-  var messageContent = $('<p id="popupText">' + i18next.t('error.api.message') + '</p>');
-  var confirm = $('<button/>', {
-    id: 'buttonConfirm',
-    class: 'base-full-button base-button base-button-highlight',
-    text: i18next.t('error.api.confirm')
-  });
-  gui.showPopup(i18next.t('error.api.title'), null, messageContent.add(confirm));
-  $('#buttonConfirm').click(function() {
-    gui.closePopup();
-  });
-  $('.base-spinner').remove();
-  if ($('.list-container ul').is(':empty')) {
-    $('<h2/>', {
-      text: i18next.t('list.nomatches')
-    }).appendTo('.list-container ul');
+    var messageContent = $('<p id="popupText">' + i18next.t('error.api.message') + '</p>');
+    var confirm = $('<button/>', {
+      id: 'buttonConfirm',
+      class: 'base-full-button base-button base-button-highlight',
+      text: i18next.t('error.api.confirm')
+    });
+    gui.showPopup(i18next.t('error.api.title'), null, messageContent.add(confirm));
+    $('#buttonConfirm').click(function() {
+      gui.closePopup();
+      location.reload();
+    });
+    $('.base-spinner').remove();
+    if($('.list-container ul').is(':empty')) {
+      $('<h2/>', {
+        text: i18next.t('list.nomatches')
+      }).appendTo('.list-container ul');
+    }
+    console.warn(error);
   }
-  console.warn(error);
-}
-
 }
 
 var url = {
@@ -52,22 +52,22 @@ var url = {
     for (var i = 0; i < sURLVariables.length; i++) {
       var sParameterName = sURLVariables[i].split('=');
       if (sParameterName[0] == name) {
-        try{
+        try {
           return decodeURIComponent(sParameterName[1]);
-         }catch(e){
-            $("#base-content-box").html("");
-            $("body").append($('<div/>', {
-              class: "error-message"
-            }));
-            header = $('<h1/>', {
-              text: i18next.t('base.urierrormessagetitle')
-            });
-            header.appendTo($("div.error-message"));
-            paragraph = $('<p/>', {
-              text: i18next.t('base.urierrormessage')
-            });
-            paragraph.appendTo($("div.error-message"));
-          }
+        } catch(e) {
+          $("#base-content-box").html("");
+          $("body").append($('<div/>', {
+            class: "error-message"
+          }));
+          header = $('<h1/>', {
+            text: i18next.t('base.urierrormessagetitle')
+          });
+          header.appendTo($("div.error-message"));
+          paragraph = $('<p/>', {
+            text: i18next.t('base.urierrormessage')
+          });
+          paragraph.appendTo($("div.error-message"));
+        }
       }
     }
     // If parameter is not found, return empty string.
@@ -86,14 +86,11 @@ var url = {
       var newParam = key + "=" + newValue;
       var newUrl = window.location.href.replace(oldParam, newParam);
       window.history.replaceState(null, null, newUrl);
-    } else {
-      // If it does not exist, do nothing.
     }
   },
   addParameter: function(key, value) {
     // Check if there are any GET parameters already.
     var fullUrl = url.removeHashtagFromUrl();
-
     if(url.getAllParameters() !== "") {
       // Check if specified parameter exists.
       if(url.getParameter(key) !== "") {
@@ -233,37 +230,36 @@ var oauth = {
   },
   logout: function() {
     $.get('api/apiOAuth.php', {
-        oauth_action: 'logout'
-      }, function() {
-          var confirm = $('<button/>', {
-            id: 'buttonConfirm',
-            class: 'base-full-button base-button base-button-highlight',
-            text: i18next.t('base.ok')
-          });
-
-          gui.showPopup(i18next.t('base.loggedout'), null, confirm);
-
-          // Closes the popup no matter which button is clicked
-          $('#buttonConfirm').click(function() {
-            gui.closePopup();
-          });
-
-          // Tell the listener that the user has logged out.
-          if(jQuery.isFunction(oauth.logoutListener)) {
-            oauth.logoutListener();
-          }
+      oauth_action: 'logout'
+    }, function() {
+      var confirm = $('<button/>', {
+        id: 'buttonConfirm',
+        class: 'base-full-button base-button base-button-highlight',
+        text: i18next.t('base.ok')
       });
+
+      gui.showPopup(i18next.t('base.loggedout'), null, confirm);
+
+      // Closes the popup no matter which button is clicked
+      $('#buttonConfirm').click(function() {
+        gui.closePopup();
+      });
+
+      // Tell the listener that the user has logged out.
+      if(jQuery.isFunction(oauth.logoutListener)) {
+        oauth.logoutListener();
+      }
+    });
   },
   post: function(id, title, list, latitude, longitude) {
-      $.post('api/apiOAuth.php', {
-          oauth_action: 'post',
-          id: id,
-          title: title,
-          list: list,
-          latitude: latitude,
-          longitude: longitude
-      }, function(response) {
-      });
+    $.post('api/apiOAuth.php', {
+      oauth_action: 'post',
+      id: id,
+      title: title,
+      list: list,
+      latitude: latitude,
+      longitude: longitude
+    };
   },
   registerLogoutListener: function(listenerFunction) {
     oauth.logoutListener = listenerFunction;
@@ -274,86 +270,87 @@ var oauth = {
 };
 
 var cookie = {
-    confirmCookieUse : function(){
-        var popupDiv = $('<div/>');
-        var cookieInfo = $('<div/>', {
-            id: "popup-cookie-information",
-            class: "base-thin-top-line"
-        });
-        $('<p/>', {
-            id: "we-use-cookie",
-            text: i18next.t('aboutW.weUseCookie')
-        }).appendTo(cookieInfo);
-        var cookieList = $('<ul/>', {
-            id: "cookie-function-list"
-        }).appendTo(cookieInfo);
-        $('<li/>', {
-            id:"cookie1",
-            text: i18next.t('aboutW.cookieUse1')
-        }).appendTo(cookieList);
-        $('<p/>', {
-            id: "cookie-information",
-            text: i18next.t('aboutW.cookieInfo')
-        }).appendTo(cookieInfo);
-        $('<p/>', {
-            id: "how-remove-cookie",
-            text: i18next.t('aboutW.noLikeCookie')
-        }).appendTo(cookieInfo);
-        cookieInfo.hide();
-        cookieInfo.css("text-align", "left");
-        cookieInfo.appendTo(popupDiv);
+  confirmCookieUse : function(){
+    var popupDiv = $('<div/>');
+    var cookieInfo = $('<div/>', {
+      id: "popup-cookie-information",
+      class: "base-thin-top-line"
+    });
+    $('<p/>', {
+      id: "we-use-cookie",
+      text: i18next.t('aboutW.weUseCookie')
+    }).appendTo(cookieInfo);
+    var cookieList = $('<ul/>', {
+      id: "cookie-function-list"
+    }).appendTo(cookieInfo);
+    $('<li/>', {
+      id:"cookie1",
+      text: i18next.t('aboutW.cookieUse1')
+    }).appendTo(cookieList);
+    $('<p/>', {
+      id: "cookie-information",
+      text: i18next.t('aboutW.cookieInfo')
+    }).appendTo(cookieInfo);
+    $('<p/>', {
+      id: "how-remove-cookie",
+      text: i18next.t('aboutW.noLikeCookie')
+    }).appendTo(cookieInfo);
+    cookieInfo.hide();
+    cookieInfo.css("text-align", "left");
+    cookieInfo.appendTo(popupDiv);
 
-        $('<button/>', {
-          id: 'buttonConfirm',
-          class: 'base-full-button base-button base-button-highlight',
-          text: i18next.t('base.confirm')
-        }).appendTo(popupDiv);
+    $('<button/>', {
+      id: 'buttonConfirm',
+      class: 'base-full-button base-button base-button-highlight',
+      text: i18next.t('base.confirm')
+    }).appendTo(popupDiv);
 
-        gui.showPopup(i18next.t('base.cookieMessageTitle'),i18next.t('base.cookieMessage')+" ",popupDiv);
-        var readMore = $('<a/>', {
-            id: "read-more",
-            text: i18next.t('base.readMore'),
-            href:"#"
-        }).appendTo("#base-popup-popup p:first");
+    gui.showPopup(i18next.t('base.cookieMessageTitle'),i18next.t('base.cookieMessage')+" ",popupDiv);
+    var readMore = $('<a/>', {
+      id: "read-more",
+      text: i18next.t('base.readMore'),
+      href:"#"
+    }).appendTo("#base-popup-popup p:first");
 
-        readMore.click(function() {
-            $('#read-more').remove();
-            $('#popup-cookie-information').show();
-        });
+    readMore.click(function() {
+      $('#read-more').remove();
+      $('#popup-cookie-information').show();
+    });
 
-        $('#buttonConfirm').click(function() {
-            document.cookie = "confirmedCookieUse = true"
-            gui.closePopup(null,null);
-        });
-    },
-    getCookie : function(cookie){
-        var regex = new RegExp(cookie+"=\\w+");
-        var cookie = regex.exec(document.cookie);
-        if(cookie){
-          return cookie[0].replace(/language=/i,"");
-        }
-        return null;
-    },
-    deleteCookie : function(cookie){
-        document.cookie = cookie+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    },
-    deleteAllCookies : function (){
-        var cookies = document.cookie.split(";");
-        for (var i = 0; i < cookies.length; i++)
-          cookie.deleteCookie(cookies[i].split("=")[0]);
+    $('#buttonConfirm').click(function() {
+      document.cookie = "confirmedCookieUse = true"
+      gui.closePopup(null,null);
+    });
+  },
+  getCookie : function(cookie){
+    var regex = new RegExp(cookie+"=\\w+");
+    var cookie = regex.exec(document.cookie);
+    if(cookie){
+      return cookie[0].replace(/language=/i,"");
     }
+    return null;
+  },
+  deleteCookie : function(cookie){
+    document.cookie = cookie+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+  },
+  deleteAllCookies : function (){
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+      cookie.deleteCookie(cookies[i].split("=")[0]);
+    }
+  }
 };
 
 $(function() {
-    i18next.on('loaded', function(loaded) {
-        if(!cookie.getCookie("confirmedCookieUse")){
-            cookie.confirmCookieUse();
-        }
-    });
+  i18next.on('loaded', function(loaded) {
+    if(!cookie.getCookie("confirmedCookieUse")){
+      cookie.confirmCookieUse();
+    }
+  });
 });
 
 var helpFunctions = {
-    hasCoordinates : function(artwork){
-      return !(artwork.lat == null && artwork.lon == null);
-    }
+  hasCoordinates : function(artwork){
+    return !(artwork.lat == null && artwork.lon == null);
+  }
 };
