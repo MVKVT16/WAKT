@@ -74,13 +74,13 @@ var Nearby = function() {
     return (longitude / 360) * Math.cos(this.toRadians(latitude)) * this.cf;
   };
   this.distanceFromEquator = function(latitude) {
-    return (latitude / 180) * this.cf;
+    return (latitude / 180) * (this.cf/2);
   };
   this.distFromPMeridToLong = function(distance, latitude) {
     return (distance * 360) / (Math.cos(this.toRadians(latitude)) * this.cf);
   };
   this.distFromEquatorToLat = function(distance) {
-    return distance * 180 / this.cf;
+    return distance * 180 / (this.cf/2);
   };
   this.toRadians = function(degrees) {
     return degrees * (Math.PI / 180);
