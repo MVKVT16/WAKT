@@ -1,6 +1,4 @@
 i18next.on('loaded', function(loaded) {
-  $('#search-form input').attr('disabled', false);
-
   $('title').text(i18next.t('search.searchtitle'));
   $('select[name="has_coords"] > option[value=""]').text(i18next.t('search.all'));
   $('select[name="has_coords"] > option[value="false"]').text(i18next.t('base.nocoords'));
@@ -14,14 +12,7 @@ i18next.on('loaded', function(loaded) {
   $('#county-label').prepend(i18next.t('search.countyField'));
   $('#muni-label').prepend(i18next.t('search.muniField'));
   $('#submit-button').attr('value',i18next.t('search.search'));
-  // Disables all inputs and selects that do not hold important values for the search
-  // This keeps the url for requested page cleaner
-  $('#search-form').submit(function() {
-    $('#search-form input, select').filter(function() {
-      return !this.value;
-    }).attr('disabled', true);
-    return true;
-  });
+  
   // Populate counties select with data
   // Reads data from the json file in the data folder
   $.getJSON('data/counties.json', function(counties) {
