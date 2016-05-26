@@ -108,8 +108,23 @@ var url = {
   },
   removeParameter: function(name) {
     if(url.getParameter(name) !== "") {
-      var oldParam = "&" + name + "=" + url.getParameter(name);
-      var newUrl = window.location.href.replace(oldParam, "");
+      var oldParam =  name + "=" + url.getParameter(name);
+      var allParams = url.getAllParameters().split('&');
+      var newParams = "";
+
+      for (i = 0; i < allParams.length; i++) {
+        if(allParams[i] !== oldParam) {
+          newParams += allParams[i] + "&";
+        }
+      }
+      var newUrl;
+      if(newParams !== "") {
+        // Remove trailing &
+        newParams = newParams.substring(0, newParams.length-1);
+        newUrl = window.location.href.split('?')[0] + "?" + newParams;
+      } else {
+        newUrl = window.location.href.split('?')[0];
+      }
       window.history.replaceState(null, null, newUrl);
     }
   },
@@ -220,6 +235,10 @@ var oauth = {
       window.location.href = "api/api.php?action=oauth&oauth_action=login&login_page=" + encodeURIComponent(curPath);
   },
   getUserInfo: function(callback) {
+    if(url.getParameter('failedlogin') !== "") {
+      url.removeParameter('failedlogin');
+      gui.showErrorMessage('An error(login failure): Failed to login!');
+    };
     $.getJSON('api/api.php', {
       action: 'oauth',
       oauth_action: 'user_info'
