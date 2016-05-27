@@ -139,7 +139,7 @@
           "title": "Server did not respond",
           "message": "You may be disconnected or an error occured on our server. Please try again later",
           "confirm": "Reload"
-        }
-    },
+        },
         "404Text": "404: Page not found"
+    }
 }
