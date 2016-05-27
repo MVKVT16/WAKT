@@ -6,9 +6,6 @@ if (strtolower($_SERVER['REQUEST_METHOD']) != 'post') {
 }
 
 // Check that all parameters needed exist.
-if(!isset($_POST['id'])) {
-  exitWithHttpStatus(400, 'Missing id parameter');
-}
 if(!isset($_POST['title'])) {
   exitWithHttpStatus(400, 'Missing title parameter');
 }
@@ -139,7 +136,7 @@ if($result == false) {
 $sectionNumber = "0";
 
 // If the Wiki exists checking if section exists on that wiki
-if(!($result['query']['pages']['-1']['missing'] == "")) {
+if(!($result['query']['pages']['-1']['missing'] == "" && isset($result['query']['pages']['-1']['missing']))) {
   // Retrieve sections for wiki
   $data = array(
     'format' => 'json',
