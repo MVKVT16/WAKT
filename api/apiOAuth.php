@@ -151,7 +151,7 @@ function post() {
   $content = getFirstElem($page['revisions']);
   $wikitext = $content['*'];
   $newWikiText = editArtworkCoordinates($wikitext, $id, $lat, $long);
-  $summary = 'Från WAKT: koordinater för konstverket "'.$title.'" har ändrats till ('.$lat.', '.$long.').';
+  $summary = 'Från #WAKT: koordinater för konstverket "'.$title.'" har ändrats till ('.$lat.', '.$long.').';
   $apiParams = array(
     'action' => 'edit',
     'title' => $pageTitle,
